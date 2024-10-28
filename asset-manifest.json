@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/halloween-game/static/css/main.d3d65cd9.css",
-    "main.js": "/halloween-game/static/js/main.1f9ac0f0.js",
-    "static/js/453.8835681a.chunk.js": "/halloween-game/static/js/453.8835681a.chunk.js",
-    "static/media/background3.jpg": "/halloween-game/static/media/background3.3420eeedcca53326b72f.jpg",
-    "index.html": "/halloween-game/index.html",
-    "main.d3d65cd9.css.map": "/halloween-game/static/css/main.d3d65cd9.css.map",
-    "main.1f9ac0f0.js.map": "/halloween-game/static/js/main.1f9ac0f0.js.map",
-    "453.8835681a.chunk.js.map": "/halloween-game/static/js/453.8835681a.chunk.js.map"
+    "main.css": "/static/css/main.3a555962.css",
+    "main.js": "/static/js/main.b60dfca8.js",
+    "static/js/453.8835681a.chunk.js": "/static/js/453.8835681a.chunk.js",
+    "static/media/background3.jpg": "/static/media/background3.3420eeedcca53326b72f.jpg",
+    "index.html": "/index.html",
+    "main.3a555962.css.map": "/static/css/main.3a555962.css.map",
+    "main.b60dfca8.js.map": "/static/js/main.b60dfca8.js.map",
+    "453.8835681a.chunk.js.map": "/static/js/453.8835681a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3d65cd9.css",
-    "static/js/main.1f9ac0f0.js"
+    "static/css/main.3a555962.css",
+    "static/js/main.b60dfca8.js"
   ]
 }
