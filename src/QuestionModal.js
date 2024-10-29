@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import "./QuestionModal.css";
 
 const QuestionModal = ({
   category,
@@ -60,7 +61,7 @@ const QuestionModal = ({
                 Show Answer
               </button>
             )}
-            <button className="btn btn-secondary" onClick={onClose}>
+            <button className="btn btn-dark" onClick={onClose}>
               Close
             </button>
           </div>
