@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import QuestionModal from './QuestionModal';
-import SetUpBoard from './SetUpBoard';
-import SetUpPlayers from './SetUpPlayers';
+import React, { useState } from "react";
+import QuestionModal from "./QuestionModal";
+import SetUpBoard from "./SetUpBoard";
+import SetUpPlayers from "./SetUpPlayers";
 import Scores from "./Scores";
-import { categories, questions, answers } from './Data';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { categories, questions, answers } from "./Data";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
-  const [currentCategory, setCurrentCategory] = useState('');
+  const [currentCategory, setCurrentCategory] = useState("");
   const [currentPoints, setCurrentPoints] = useState(0);
-  const [currentQuestion, setCurrentQuestion] = useState('');
-  const [currentAnswer, setCurrentAnswer] = useState('');
+  const [currentQuestion, setCurrentQuestion] = useState("");
+  const [currentAnswer, setCurrentAnswer] = useState("");
   const [players, setPlayers] = useState([]);
 
   const handleShowModal = (catIndex, points, questionId) => {
@@ -37,27 +37,33 @@ const App = () => {
   const updatePlayers = (newPlayers) => {
     setPlayers(newPlayers);
   };
-  
 
   const updatePlayerPoints = (playerName) => {
-    setPlayers(prevPlayers =>
-      prevPlayers.map(player =>
-        player.name === playerName ? { ...player, points: player.points + currentPoints } : player
+    setPlayers((prevPlayers) =>
+      prevPlayers.map((player) =>
+        player.name === playerName
+          ? { ...player, points: player.points + currentPoints }
+          : player
       )
     );
   };
 
   return (
     <div className="container">
-      <h1 className="text-center mt-4 mb-4">Halloween Game</h1>
-      <SetUpBoard 
-        categories={categories} 
-        questions={questions} 
-        onQuestionClick={handleShowModal} 
+      <h1
+        className="text-center mt-4 mb-4"
+        style={{ fontFamily: "Metal Mania", fontSize: "72px" }}
+      >
+        Halloween Trivia!
+      </h1>
+      <SetUpBoard
+        categories={categories}
+        questions={questions}
+        onQuestionClick={handleShowModal}
       />
 
       {showModal && (
-        <QuestionModal 
+        <QuestionModal
           category={currentCategory}
           points={currentPoints}
           question={currentQuestion}
@@ -67,7 +73,7 @@ const App = () => {
           updatePlayerPoints={updatePlayerPoints}
         />
       )}
-      
+
       <Scores players={players} />
       <SetUpPlayers updatePlayers={updatePlayers} />
     </div>

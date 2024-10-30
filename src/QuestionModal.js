@@ -28,13 +28,13 @@ const QuestionModal = ({
         className="modal-dialog" 
         role="document"
         style={{ maxWidth: "50%", width: "100%" }}
-        >
+      >
         <div 
           className="modal-content"
           style={{ backgroundColor: "rgb(218, 113, 0)" }}
-          >
+        >
           <div className="modal-header">
-            <h5 className="modal-title">
+            <h5 className="modal-title" style={{ fontFamily: "Metal Mania", fontSize: "32px" }}>
               {category} for {points} points
             </h5>
             <button type="button" className="close" onClick={onClose}>
@@ -44,32 +44,41 @@ const QuestionModal = ({
           <div className="modal-body">
             {/* Only show the question if showAnswer is false */}
             {!showAnswer && (
-              typeof question === "string" ? (
-                <p>{question}</p>
-              ) : (
-                question.image && (
+              <div>
+                {typeof question === "string" ? (
+                  <p>{question}</p>
+                ) : question.image ? (
                   <img
                     src={question.image}
                     alt="Question visual"
-                    className="question-image"
+                    className="question-image mb-2"
                   />
-                )
-              )
+                ) : (
+                  <div>
+                    <p>{question.question}</p>
+                    <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
+                      {question.choices.map((choice, index) => (
+                        <li key={index}>{choice}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             )}
 
             {/* Show the answer when showAnswer is true */}
             {showAnswer && (
               <div>
-                {typeof answer === "string" ? (
-                  <p>{answer}</p>
+                {Array.isArray(answer) ? (
+                  <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
+                    {answer.map((ans, index) => (
+                      <li key={index}>{ans}</li>
+                    ))}
+                  </ul>
+                ) : typeof answer === "object" && answer.image ? (
+                  <img src={answer.image} alt="Answer visual" className="answer-image mb-2" />
                 ) : (
-                  answer.image && (
-                    <img
-                      src={answer.image}
-                      alt="Answer visual"
-                      className="answer-image mb-2"
-                    />
-                  )
+                  <p>{answer}</p>
                 )}
               </div>
             )}
@@ -111,10 +120,15 @@ QuestionModal.propTypes = {
   question: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.shape({ image: PropTypes.string }),
+    PropTypes.shape({
+      question: PropTypes.string.isRequired,
+      choices: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }),
   ]).isRequired,
   answer: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.shape({ image: PropTypes.string }),
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.shape({ image: PropTypes.string }), // Ensure this matches your data structure
   ]).isRequired,
   onClose: PropTypes.func.isRequired,
   players: PropTypes.arrayOf(
