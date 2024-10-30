@@ -1,6 +1,6 @@
 /* Set the background color for the modal */
 .modal-content {
-  background-color: orange;
+  background-color: rgb(218, 113, 0);
 }
 
 /* Move the close button to the top right */
@@ -12,4 +12,18 @@
   color: #000;
   background: none;
   border: none;
+}
+
+.question-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.answer-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }

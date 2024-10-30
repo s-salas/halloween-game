@@ -9,7 +9,7 @@ const QuestionModal = ({
   answer,
   onClose,
   players,
-  updatePlayerPoints
+  updatePlayerPoints,
 }) => {
   const [showAnswer, setShowAnswer] = useState(false);
 
@@ -24,8 +24,15 @@ const QuestionModal = ({
 
   return (
     <div className="modal show d-block" tabIndex="-1" role="dialog">
-      <div className="modal-dialog" role="document">
-        <div className="modal-content">
+      <div 
+        className="modal-dialog" 
+        role="document"
+        style={{ maxWidth: "50%", width: "100%" }}
+        >
+        <div 
+          className="modal-content"
+          style={{ backgroundColor: "rgb(218, 113, 0)" }}
+          >
           <div className="modal-header">
             <h5 className="modal-title">
               {category} for {points} points
@@ -35,12 +42,39 @@ const QuestionModal = ({
             </button>
           </div>
           <div className="modal-body">
-            <p>{question}</p>
-            {showAnswer && (
-              <p>
-                <strong>Answer:</strong> {answer}
-              </p>
+            {/* Only show the question if showAnswer is false */}
+            {!showAnswer && (
+              typeof question === "string" ? (
+                <p>{question}</p>
+              ) : (
+                question.image && (
+                  <img
+                    src={question.image}
+                    alt="Question visual"
+                    className="question-image"
+                  />
+                )
+              )
             )}
+
+            {/* Show the answer when showAnswer is true */}
+            {showAnswer && (
+              <div>
+                {typeof answer === "string" ? (
+                  <p>{answer}</p>
+                ) : (
+                  answer.image && (
+                    <img
+                      src={answer.image}
+                      alt="Answer visual"
+                      className="answer-image mb-2"
+                    />
+                  )
+                )}
+              </div>
+            )}
+
+            {/* Player buttons to add points */}
             {showAnswer && (
               <div>
                 {players.map((player, index) => (
@@ -74,8 +108,14 @@ const QuestionModal = ({
 QuestionModal.propTypes = {
   category: PropTypes.string.isRequired,
   points: PropTypes.number.isRequired,
-  question: PropTypes.string.isRequired,
-  answer: PropTypes.string.isRequired,
+  question: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({ image: PropTypes.string }),
+  ]).isRequired,
+  answer: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({ image: PropTypes.string }),
+  ]).isRequired,
   onClose: PropTypes.func.isRequired,
   players: PropTypes.arrayOf(
     PropTypes.shape({
