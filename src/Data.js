@@ -31,54 +31,25 @@ export const questions = [
     { image: gremlinsQuestionImg },
     { image: alienQuestionImg },
   ],
-  ["Q1 Cat2", "Q2 Cat2", "Q3 Cat2", "Q4 Cat2", "Q5 Cat 2"],
+  ["Which Marvel superhero is known as the Scarlet Witch?", 
+    "Which character from J.K. Rowling's Harry Potter series is known for her strong magical abilities and is a member of the Gryffindor house?", 
+    "Who is the wise old wizard that leads the fellowship in The Lord of the Rings?", 
+    "What is the name of the iconic character played by Bette Midler in the 1993 film Hocus Pocus?", 
+    "In the Harry Potter series, who is revealed to be the Half-Blood Prince?"],
   [
     // Urban Legends category
-    {
-      question: "question 1",
-      choices: [
-        "A) ",
-        "B) ",
-        "C) ",
-        "D) "
-      ],
-    },
-    {
-      question: "question 2",
-      choices: [
-        "A) ",
-        "B) ",
-        "C) ",
-        "D) "
-      ],
-    },
-    {
-      question: "question 3",
-      choices: [
-        "A) ",
-        "B) ",
-        "C) ",
-        "D) "
-      ],
-    },
-    {
-      question: "question 4",
-      choices: [
-        "A) ",
-        "B) ",
-        "C) ",
-        "D) "
-      ],
-    },
-    {
-      question: "question 5",
-      choices: [
-        "A) ",
-        "B) ",
-        "C) ",
-        "D) "
-      ],
-    },
+    "What is the name of the urban legend involving a supposed haunted mirror that shows a person's true nature?",
+    "What Mexican urban legend talks of a figure wearing a white dress wandering graveyards or streets looking for her children on Halloween night?",
+    "What is the urban legend that revolves around a cursed object, often a doll, that brings misfortune to its owner?",
+    "In the urban legends from India, what's the name of the spirit that is said to lure men and harm them?",
+    "In which state did the urban legend of the 'Chupacabra,' a creature said to drain the blood of live stock, originate?"
+      // { question: "question 1",
+      // choices: [
+        // "A) ",
+        // "B) ",
+        // "C) ",
+        // "D) "
+      // ],
   ],
   [
     { image: spiceGirlsImg },
@@ -98,7 +69,7 @@ export const answers = [
     { image: gremlinsAnswerImg },
     { image: alienAnswerImg },
   ],
-  ["A1 Cat2", "A2 Cat2", "A3 Cat2", "A4 Cat2", "A5 Cat2"],
-  ["A1 Cat2", "A2 Cat2", "A3 Cat2", "A4 Cat2", "A5 Cat2"],
+  ["Wanda Maximoff", "Hermione Granger", "Gandalf", "Winifred Sanderson", "Severus Snape"],
+  ["Bloody Mary", "La Llorona", "Annabelle", "Chudail", "Puerto Rico"],
   ["Spice Girls", "Holy guacamole!", "Hawaiian Punch", "Creative outlet", "Amazon Prime"],
 ];
