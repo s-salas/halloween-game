@@ -46,7 +46,7 @@ const QuestionModal = ({
             {!showAnswer && (
               <div>
                 {typeof question === "string" ? (
-                  <p>{question}</p>
+                  <p className="fs-4 fw-semibold" style={{ fontFamily: "Arial" }}>{question}</p>
                 ) : question.image ? (
                   <img
                     src={question.image}
@@ -55,10 +55,10 @@ const QuestionModal = ({
                   />
                 ) : (
                   <div>
-                    <p>{question.question}</p>
+                    <p className="fs-4 fw-semibold" style={{ fontFamily: "Arial" }}>{question.question}</p>
                     <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
                       {question.choices.map((choice, index) => (
-                        <li key={index}>{choice}</li>
+                        <li className="fs-4 fw-semibold" style={{ fontFamily: "Arial" }} key={index}>{choice}</li>
                       ))}
                     </ul>
                   </div>
@@ -78,7 +78,7 @@ const QuestionModal = ({
                 ) : typeof answer === "object" && answer.image ? (
                   <img src={answer.image} alt="Answer visual" className="answer-image mb-2" />
                 ) : (
-                  <p>{answer}</p>
+                  <p className="fs-3 fw-semibold text-center mt-5 mb-5" style={{ fontFamily: "Arial" }}>{answer}</p>
                 )}
               </div>
             )}
@@ -89,7 +89,7 @@ const QuestionModal = ({
                 {players.map((player, index) => (
                   <button
                     key={index}
-                    className="btn btn-dark"
+                    className="btn btn-dark mx-1"
                     onClick={() => addPoints(player.name)}
                   >
                     {player.name}

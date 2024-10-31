@@ -14,7 +14,7 @@ function SetUpPlayers({ updatePlayers }) {
     };
 
     return (
-        <div>
+        <div className="mb-5">
             <form onSubmit={handlePlayers}>
                 <label htmlFor="player">
                     <input
